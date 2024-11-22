@@ -1,4 +1,7 @@
 
+using Microsoft.EntityFrameworkCore;
+using Web_API_Caching_with_Redis.Data;
+
 namespace Web_API_Caching_with_Redis
 {
     public class Program
@@ -13,6 +16,10 @@ namespace Web_API_Caching_with_Redis
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            // Add services to the container.
+            builder.Services.AddDbContext<AppDbContext>(options =>
+                options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             var app = builder.Build();
 
