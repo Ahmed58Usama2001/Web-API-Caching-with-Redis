@@ -1,6 +1,7 @@
 
 using Microsoft.EntityFrameworkCore;
 using Web_API_Caching_with_Redis.Data;
+using Web_API_Caching_with_Redis.Services;
 
 namespace Web_API_Caching_with_Redis
 {
@@ -20,6 +21,8 @@ namespace Web_API_Caching_with_Redis
             // Add services to the container.
             builder.Services.AddDbContext<AppDbContext>(options =>
                 options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            builder.Services.AddScoped<ICacheService, CacheService>();
 
             var app = builder.Build();
 
