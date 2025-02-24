@@ -6,18 +6,6 @@ This repository contains a **.NET Web API** project designed with **Clean Archit
 ## 🔥 What is Redis?
 [Redis](https://redis.io/) is an open-source, in-memory data store used as a **cache**, **message broker**, and **database**. It enables high-speed data retrieval, reducing response times for API requests.
 
-## 🏗️ Project Architecture
-This project follows **Clean Architecture** principles, ensuring:
-- Separation of concerns
-- Maintainability and scalability
-- Testability
-
-### Layers
-- **API Layer** - Handles HTTP requests and responses.
-- **Application Layer** - Contains business logic and services.
-- **Infrastructure Layer** - Implements Redis caching and database interactions.
-- **Domain Layer** - Defines core business models and logic.
-
 ## 🚀 Features
 - **Implement Redis caching** for API responses
 - **Store frequently accessed data** in Redis
